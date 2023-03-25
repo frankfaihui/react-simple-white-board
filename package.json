@@ -1,0 +1,32 @@
+{
+  "name": "react-simple-white-board",
+  "version": "1.0.0",
+  "description": "A simple white board React component",
+  "main": "dist/ReactSimpleWhiteBoard.js",
+  "scripts": {
+    "build": "tsc && node build.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frankfaihui/react-simple-white-board.git"
+  },
+  "keywords": [
+    "white board",
+    "sketchpad",
+    "paint"
+  ],
+  "author": "frankfaihui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frankfaihui/react-simple-white-board/issues"
+  },
+  "homepage": "https://github.com/frankfaihui/react-simple-white-board#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "simple-white-board": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28"
+  }
+}
