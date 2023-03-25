@@ -24,7 +24,7 @@
   "homepage": "https://github.com/frankfaihui/react-simple-white-board#readme",
   "dependencies": {
     "react": "^18.2.0",
-    "simple-white-board": "^1.0.1"
+    "simple-white-board": "^1.0.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.28"
