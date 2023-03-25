@@ -13,7 +13,7 @@ export default function Controls(props: Props) {
   return (
     <div className="react-simple-white-board-settings">
       <div className="react-simple-white-board-control">
-        <label>Brush Color</label>
+        <label style={{ marginRight: 10 }}>Brush Color</label>
         <input
           type="color"
           value={lineColor}
@@ -23,7 +23,7 @@ export default function Controls(props: Props) {
         />
       </div>
       <div className="react-simple-white-board-control">
-        <label>Brush Width</label>
+        <label style={{ marginRight: 10 }}>Brush Width</label>
         <input
           type="range"
           min="1"

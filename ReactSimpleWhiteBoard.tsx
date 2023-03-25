@@ -1,5 +1,4 @@
 import React, { useEffect, useImperativeHandle, useRef, useState } from "react";
-import "./styles.css";
 import SimpleWhiteBoard from "simple-white-board";
 import Controls from "./Controls";
 
@@ -48,10 +47,13 @@ const ReactSimpleWhiteBoard = React.forwardRef<HTMLCanvasElement>((props: ReactS
       />
       <canvas
         ref={canvasRef}
+        style={{ border: '#000000 solid 1px' }}
         width={WIDTH}
         height={WIDTH}
       />
-      <button onClick={() => whiteBoard.current?.erase()}>Erase</button>
+      <div>
+        <button onClick={() => whiteBoard.current?.erase()}>Erase</button>
+      </div>
     </div>
   );
 });
