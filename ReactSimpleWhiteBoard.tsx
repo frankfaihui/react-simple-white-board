@@ -2,11 +2,6 @@ import React, { useEffect, useImperativeHandle, useRef, useState } from "react";
 import SimpleWhiteBoard from "simple-white-board";
 import Controls from "./Controls";
 
-const WIDTH = Math.min(
-  typeof window !== "undefined" ? window.screen.width * 0.8 : 500,
-  500
-);
-
 export interface ReactSimpleWhiteBoardProps {
 }
 
@@ -14,9 +9,20 @@ const ReactSimpleWhiteBoard = React.forwardRef<HTMLCanvasElement>((props: ReactS
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const whiteBoard = useRef<SimpleWhiteBoard>();
 
+  const [canvasWidth, setCanvasWidth] = useState<number>();
+
   useImperativeHandle(ref, () => canvasRef.current as HTMLCanvasElement, []);
   const [lineWidth, setLineWidth] = useState(5);
   const [lineColor, setLineColor] = useState("#000000");
+
+  useEffect(() => {
+    const width = Math.min(
+      typeof window !== "undefined" ? window.screen.width * 0.8 : 500,
+      500
+    );
+
+    setCanvasWidth(width);
+  }, []);
 
   useEffect(() => {
     if (!canvasRef.current) return;
@@ -28,7 +34,7 @@ const ReactSimpleWhiteBoard = React.forwardRef<HTMLCanvasElement>((props: ReactS
         whiteBoard.current.dispose();
       }
     }
-  }, []);
+  }, [canvasWidth]);
 
   useEffect(() => {
     if (!whiteBoard.current) return;
@@ -48,8 +54,8 @@ const ReactSimpleWhiteBoard = React.forwardRef<HTMLCanvasElement>((props: ReactS
       <canvas
         ref={canvasRef}
         style={{ border: '#000000 solid 1px' }}
-        width={WIDTH}
-        height={WIDTH}
+        width={canvasWidth}
+        height={canvasWidth}
       />
       <div>
         <button onClick={() => whiteBoard.current?.erase()}>Erase</button>
