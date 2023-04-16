@@ -1,6 +1,6 @@
 {
   "name": "react-simple-white-board",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple white board React component",
   "main": "dist/ReactSimpleWhiteBoard.js",
   "scripts": {
